@@ -4,8 +4,10 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     [SerializeField] private Camera camera3D, camera2D;
+    public Camera Camera3D => camera3D;
+    public Camera Camera2D => camera2D;
 
-    private bool _isIn3DMode = true;
+    public bool IsIn3DMode { get; private set; } = true;
 
     private CinemachineFreeLook _cinemachineFreeLook;
 
@@ -17,10 +19,10 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) _isIn3DMode = !_isIn3DMode;
-        camera3D.enabled = _isIn3DMode;
-        camera2D.enabled = !_isIn3DMode;
+        if (Input.GetKeyDown(KeyCode.R)) IsIn3DMode = !IsIn3DMode;
+        camera3D.enabled = IsIn3DMode;
+        camera2D.enabled = !IsIn3DMode;
 
-        _cinemachineFreeLook.enabled = _isIn3DMode;
+        _cinemachineFreeLook.enabled = IsIn3DMode;
     }
 }
