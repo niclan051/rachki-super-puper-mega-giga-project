@@ -617,7 +617,22 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: URP_OUTLINE
+    4: URP_OUTLINE
+    7: URP_OUTLINE
+    13: URP_OUTLINE
+    14: URP_OUTLINE
+    19: URP_OUTLINE
+    21: URP_OUTLINE
+    25: URP_OUTLINE
+    27: URP_OUTLINE
+    28: URP_OUTLINE
+    29: URP_OUTLINE
+    30: URP_OUTLINE
+    31: URP_OUTLINE
+    32: URP_OUTLINE
+    33: URP_OUTLINE
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
