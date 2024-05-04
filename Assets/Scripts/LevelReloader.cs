@@ -10,4 +10,9 @@ public class LevelReloader : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.buildIndex);
     }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }
