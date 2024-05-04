@@ -287,6 +287,8 @@ GameObject:
   - component: {fileID: 7082986259369141592}
   - component: {fileID: 7082986259369141594}
   - component: {fileID: 7082986259369141595}
+  - component: {fileID: 1834076936}
+  - component: {fileID: 1834076935}
   m_Layer: 5
   m_Name: Level Complete Panel
   m_TagString: Untagged
@@ -353,6 +355,38 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 40.96
+--- !u!111 &1834076936
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082986259369141593}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 26e77a8a42179a6478c3ae5068861aec, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 26e77a8a42179a6478c3ae5068861aec, type: 2}
+  - {fileID: 7400000, guid: 0406f42173fdf4c4fb64e6cf42f040ac, type: 2}
+  - {fileID: 7400000, guid: 7f6498d318154c542b79319d50f1f808, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &1834076935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082986259369141593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77908e3d2caba604aa9ebc4699f9032f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openAnimation: {fileID: 7400000, guid: 0406f42173fdf4c4fb64e6cf42f040ac, type: 2}
+  closeAnimation: {fileID: 7400000, guid: 7f6498d318154c542b79319d50f1f808, type: 2}
 --- !u!1 &7082986260218726063
 GameObject:
   m_ObjectHideFlags: 0
