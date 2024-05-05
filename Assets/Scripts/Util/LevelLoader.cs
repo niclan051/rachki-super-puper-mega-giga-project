@@ -11,5 +11,10 @@ namespace Util {
         public void LoadNextLevel() {
             _levelManager.LoadLevel(++_levelManager.CurrentLevelIndex);
         }
+
+        public void ReloadLevel()
+        {
+            _levelManager.LoadLevel(_levelManager.CurrentLevelIndex);
+        }
     }
 }
