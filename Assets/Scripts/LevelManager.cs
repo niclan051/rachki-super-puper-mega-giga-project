@@ -4,14 +4,19 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : DontDestroyOnLoad {
-    [SerializeField] private List<SceneAsset> levels;
+public class LevelManager : DontDestroyOnLoad
+{
     public int CurrentLevelIndex { get; set; }
 
+    protected override void Start()
+    {
+        base.Start();
+        CurrentLevelIndex = PlayerPrefs.GetInt("levelIndex", 1);
+    }
     public void LoadLevel(int index) {
         CurrentLevelIndex = index;
         try {
-            SceneManager.LoadScene(levels[index].name);
+            SceneManager.LoadScene(CurrentLevelIndex);
             PlayerPrefs.SetInt("levelIndex", CurrentLevelIndex);
         }
         catch (ArgumentOutOfRangeException) {
@@ -20,9 +25,9 @@ public class LevelManager : DontDestroyOnLoad {
     }
 
     public void StartGame() {
-        LoadLevel(0);
+        LoadLevel(1);
     }
     public void LoadSavedLevel() {
-        LoadLevel(PlayerPrefs.GetInt("levelIndex", 0));
+        LoadLevel(PlayerPrefs.GetInt("levelIndex", 1));
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour {
-    private void Start() {
+    protected virtual void Start() {
         DontDestroyOnLoad(gameObject);
     }
 }
