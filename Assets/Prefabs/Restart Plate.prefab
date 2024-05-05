@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4391552897135617816}
   - component: {fileID: 4391552897135617817}
   - component: {fileID: 4391552897135617818}
-  - component: {fileID: 2297786674076135405}
+  - component: {fileID: 3266685733964018746}
   m_Layer: 0
   m_Name: Restart Plate
   m_TagString: Untagged
@@ -110,7 +110,7 @@ MonoBehaviour:
   onPlayerEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2297786674076135405}
+      - m_Target: {fileID: 3266685733964018746}
         m_MethodName: ReloadLevel
         m_Mode: 1
         m_Arguments:
@@ -124,7 +124,7 @@ MonoBehaviour:
   onPlayerExit:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2297786674076135405
+--- !u!114 &3266685733964018746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

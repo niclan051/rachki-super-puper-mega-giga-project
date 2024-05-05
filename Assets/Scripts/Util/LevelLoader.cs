@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace Util {
-    public class LevelLoader : MonoBehaviour {
+namespace Util
+{
+    public class LevelLoader : MonoBehaviour 
+    {
         private LevelManager _levelManager;
 
         private void Start() {
@@ -14,7 +17,8 @@ namespace Util {
 
         public void ReloadLevel()
         {
-            _levelManager.LoadLevel(_levelManager.CurrentLevelIndex);
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.buildIndex);
         }
     }
 }
