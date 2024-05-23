@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Util
+public class TimeScaler : MonoBehaviour
 {
-    public class TimeScaler : MonoBehaviour
-    {
-        public void SetTimeScale(float scale) => Time.timeScale = scale;
-    }
+    public void SetTimeScale(float scale) => Time.timeScale = scale;
 }
