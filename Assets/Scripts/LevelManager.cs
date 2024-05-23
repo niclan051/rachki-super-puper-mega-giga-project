@@ -4,13 +4,12 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : DontDestroyOnLoad
+public class LevelManager : MonoBehaviour
 {
     public int CurrentLevelIndex { get; set; }
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
         CurrentLevelIndex = PlayerPrefs.GetInt("levelIndex", 1);
     }
     public void LoadLevel(int index) {
