@@ -4,14 +4,23 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float speed;
     [SerializeField] private float jumpVelocity;
     [SerializeField] private Transform cameraAnchor;
+    [SerializeField] private AudioClip walkSound;
+    
     private Rigidbody _rb;
+    private AudioSource _audioSource;
     private GroundCollision _groundCollision;
     private PlayerAnimations _animations;
 
+    [SerializeField] private float timeBetweenWalkSounds;
+    private float _walkSoundTimer;
+
     private void Start() {
         _rb = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
         _groundCollision = GetComponentInChildren<GroundCollision>();
         _animations = GetComponentInChildren<PlayerAnimations>();
+
+        _walkSoundTimer = timeBetweenWalkSounds;
     }
 
     private void Update() {
@@ -22,8 +31,13 @@ public class PlayerController : MonoBehaviour {
         Vector3 soonToBeVelocity = _rb.velocity;
         soonToBeVelocity.x = transformedDirection.x;
         soonToBeVelocity.z = transformedDirection.z;
-        
-        _animations.Animator.SetBool(PlayerAnimations.Running, new Vector2(soonToBeVelocity.x, soonToBeVelocity.y).magnitude > 2f || moveDirection.magnitude > 0.001f);
+
+        if (new Vector2(soonToBeVelocity.x, soonToBeVelocity.z).magnitude > 2f && _walkSoundTimer <= 0f && _groundCollision.OnGround)
+        {
+            _audioSource.PlayOneShot(walkSound);
+            _walkSoundTimer = timeBetweenWalkSounds;
+        }
+        _animations.Animator.SetBool(PlayerAnimations.Running, new Vector2(soonToBeVelocity.x, soonToBeVelocity.z).magnitude > 2f || moveDirection.magnitude > 0.001f);
         _animations.Animator.SetTrigger(PlayerAnimations.BoolOnGround);
 
         if (_groundCollision.OnGround && Input.GetKeyDown(KeyCode.Space)) {
@@ -31,5 +45,7 @@ public class PlayerController : MonoBehaviour {
             _animations.Animator.SetTrigger(PlayerAnimations.TriggerJump);
         }
         _rb.velocity = soonToBeVelocity;
+
+        _walkSoundTimer -= Time.deltaTime;
     }
 }
