@@ -20,8 +20,7 @@ public class GamePauser : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Paused) Unpause();
-            else Pause();
+            if (!Paused) Pause();
         }
     }
 }
