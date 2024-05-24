@@ -1,11 +1,4 @@
-﻿using EPOOutline;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Rendering;
-
-#if HDRP_OUTLINE
+﻿#if HDRP_OUTLINE
 using UnityEngine.Rendering.HighDefinition;
 
 [VolumeComponentMenu("EPO/Outline")]

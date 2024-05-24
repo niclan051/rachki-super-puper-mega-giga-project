@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering;
 using System;
-using UnityEngine.Profiling;
-using Unity.Collections;
 
 namespace EPOOutline
 {

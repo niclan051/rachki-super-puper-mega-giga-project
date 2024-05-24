@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -9,7 +8,6 @@ using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.WSA;
 
 #if HDRP_OUTLINE
 using UnityEngine.Rendering.HighDefinition;

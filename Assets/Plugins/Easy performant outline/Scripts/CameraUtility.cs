@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Rendering;
+﻿using UnityEngine;
 
 #if URP_OUTLINE && UNITY_2019_1_OR_NEWER
 #if UNITY_2019_3_OR_NEWER
@@ -12,7 +9,6 @@ using UnityEngine.Rendering.LWRP;
 #endif
 
 #if UNITY_EDITOR
-using UnityEditor;
 #endif
 
 #if HDRP_OUTLINE
